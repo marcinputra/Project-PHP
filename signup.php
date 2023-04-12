@@ -38,7 +38,6 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!-- formularz -->
-
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -107,27 +106,34 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 </div>
-
 <!-- end - formularz -->
-<?php
 
-if ($error[0] == "" && $error[1] == "" && $error[2] == "" && $error[3] == "" && $error[4] == "" && $error[5]) {
-    $conn = mysqli_connect('localhost', 'webPLA', 'webPLA', 'portal');
-    if (!$conn) {
-        echo 'Błąd połaczenia z bazą danych. Error : ' . mysqli_connect_error();
-    } else {
-        // wyswietlenie danych z formularza
-        echo 'Połączono z bazą danych!';
-        echo $_POST['imie'];
-        echo $_POST['nazwisko'];
-        echo $_POST['mail'];
-        echo $_POST['haslo1'];
-        echo $_POST['regulamin'];
-        // zmienne 
-        $sql = '';
-        $imie;
-        mysqli_close($conn);
-    }
-}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <?php
+            if ($error[0] == "" && $error[1] == "" && $error[2] == "" && $error[3] == "" && $error[4] == "" && $error[5] && isset($_POST['submit'])) {
+                $conn = mysqli_connect('localhost', 'webPLA', 'webPLA', 'portal');
+                if (!$conn) {
+                    echo 'Błąd połaczenia z bazą danych. Error : ' . mysqli_connect_error();
+                } else {
+                    // wyswietlenie danych z formularza
+                    // echo $_POST['imie'];
+                    // echo $_POST['nazwisko'];
+                    // echo $_POST['login'];
+                    // echo $_POST['mail'];
+                    // echo $_POST['haslo1'];
+                    // echo $_POST['regulamin'];
+                    $datadodania = date("Y-m-d");
+                    // zmienne 
+                    $sql = "INSERT INTO users(imie, nazwisko, login, mail, haslo, regulamin, dataDodania) VALUES ('$imie','$nazwisko','$login','$mail','$haslo1',true,'$datadodania')";
+                    mysqli_query($conn, $sql);
+                    mysqli_close($conn);
 
-?>
+                    echo 'Dodano użytkownika!';
+                }
+            }
+            ?>
+        </div>
+    </div>
+</div>
