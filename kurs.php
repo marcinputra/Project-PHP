@@ -66,3 +66,5 @@ if (isset($_SESSION['loginSession'])) {
 <?php
 }
 ?>
+
+<?php include('site/footer.php'); ?>
