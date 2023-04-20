@@ -99,3 +99,8 @@ header h1:nth-of-type(3){
 .formularz {
     margin-bottom: 20px;
 }
+
+.foot {
+    padding: 40px 0;
+    margin: 40px 0 0 0;
+}

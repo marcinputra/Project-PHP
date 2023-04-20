@@ -57,7 +57,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Podstwa HTML</h5>
                     <p class="card-text">Naucz się języka HTML od podstaw. Kurs dla osób początkujących. Dzięki naszym kursom zdobędziesz lepszą pracę.</p>
-                    <a href="kurs.php" class="btn btn-primary">zapisz się na kurs</a>
+                    <a href="signup.php" class="btn btn-primary">zapisz się na kurs</a>
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Podstawy CSS</h5>
                     <p class="card-text">Naucz się upiększać strony dzięki stylom CSS. Kurs dla osób początkujących. Dzięki naszym kursom zdobędziesz lepszą pracę.</p>
-                    <a href="kurs.php" class="btn btn-primary">zapisz się na kurs</a>
+                    <a href="signup.php" class="btn btn-primary">zapisz się na kurs</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Podstawy JavaScript</h5>
                     <p class="card-text">Naucz się JavaScript od podstaw. Kurs dla osób początkujących. Dzięki naszym kursom zdobędziesz lepszą pracę.</p>
-                    <a href="kurs.php" class="btn btn-primary">zapisz się na kurs</a>
+                    <a href="signup.php" class="btn btn-primary">zapisz się na kurs</a>
                 </div>
             </div>
         </div>
@@ -120,35 +120,6 @@
                     <a class="btn btn-primary btn-lg" href="kontakt.php">Napisz do nas</a>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                    The current link item
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-                <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
-            </div>
-        </div>
-        <div class="col">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                    The current link item
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-                <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
-            </div>
-        </div>
-        <div class="col">
-
         </div>
     </div>
 </div>

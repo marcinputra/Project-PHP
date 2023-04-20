@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
             <div class="col-md">
                 <nav class="navbar navbar-expand-lg bg-light">
