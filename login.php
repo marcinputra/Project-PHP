@@ -12,6 +12,63 @@ if (isset($_SESSION['loginSession'])) {
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <h1>Konta użytkoników portalu</h1>
+                </div>
+                <div class="col-12">
+                    <!-- wyświetlenie użytkowników -->
+                    <?php
+                    $conn = mysqli_connect('localhost', 'webPLA', 'webPLA', 'portal');
+                    if (!$conn) {
+                        echo 'Błąd połaczenia z bazą danych. Error : ' . mysqli_connect_error();
+                    } else {
+                        $sqlSelect = 'SELECT IdUser, imie, nazwisko, login, mail, dataDodania FROM users';
+                        $sqlSelectResult = mysqli_query($conn, $sqlSelect);
+                        $users = mysqli_fetch_all($sqlSelectResult, MYSQLI_ASSOC);
+
+                    ?>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Imię</th>
+                                    <th scope="col">Nazwisko</th>
+                                    <th scope="col">Login</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Data utworzenia konta</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                <?php
+                                $i = 1;
+                                foreach ($users as $user) {
+
+                                    echo "<tr>";
+                                    echo "<th scope=\"row\">" . $i . "</th>";
+                                    echo "<td>" . $user['imie'] . "</td>";
+                                    echo "<td>" . $user['nazwisko'] . "</td>";
+                                    echo "<td>" . $user['login'] . "</td>";
+                                    echo "<td>" . $user['mail'] . "</td>";
+                                    echo "<td>" . $user['dataDodania'] . "</td>";
+                                    echo "<td><button type=\"button\" class=\"btn btn-warning btn-sm\">USUŃ</button></td>";
+                                    echo "</tr>";
+                                    $i++;
+                                }
+
+                                ?>
+                            </tbody>
+                        </table>
+
+                    <?php
+                        mysqli_close($conn);
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
                     <h1>Wylogowywanie</h1>
                 </div>
             </div>
@@ -49,6 +106,7 @@ if (isset($_SESSION['loginSession'])) {
                     echo "Jestem zalogowany!!!";
                     $flag = false;
                     $_SESSION['loginSession'] = $login;
+                    mysqli_close($conn);
                     header('location: login.php');
                     // break;
                 }
